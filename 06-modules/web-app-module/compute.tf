@@ -1,6 +1,6 @@
 resource "aws_instance" "instance1" {
-    ami = "ami-04f215f0e52ec06cf"
-    instance_type = "t2.micro"
+    ami = var.ami
+    instance_type = var.instance_type
     security_groups = [aws_security_group.instances.name]
     user_data = <<-EOF
             #!bin/bash
@@ -10,8 +10,8 @@ resource "aws_instance" "instance1" {
 }
 
 resource "aws_instance" "instance2"{
-    ami = ""
-    instance_type = "t2.micro"
+    ami = var.ami
+    instance_type = var.instance_type
     security_groups = [aws_security_group.instances.name]
     user_data = <<-EOF
             #!bin/bash
