@@ -1,10 +1,10 @@
 terraform{
     backend "s3" {
-      bucket = "terraform-demo-tf-state"
-      key = "03-basics/import-bootstrap/terraform.tfstate"
-      region = "us-east-1"
-      dynamodb_table = "terraform-state-locking"
-      encrypt = true
+        bucket  = "terraform-demo-tf-state"
+        key     = "03-basics/import-bootstrap/terraform.tfstate"
+        region  = "us-east-1"
+        dynamodb_table = "terraform-state-locking"
+        encrypt = true
     }
     required_providers {
         aws = {
